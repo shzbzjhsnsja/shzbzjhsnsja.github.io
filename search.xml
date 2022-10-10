@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>本地NovelAI配置教程</title>
+      <link href="/2022/10/10/%E3%80%90Stable%20Diffusion%E3%80%91%E6%9C%AC%E5%9C%B0NovelAI%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/"/>
+      <url>/2022/10/10/%E3%80%90Stable%20Diffusion%E3%80%91%E6%9C%AC%E5%9C%B0NovelAI%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="本地novelai配置教程"><a class="markdownIt-Anchor" href="#本地novelai配置教程">#</a> 本地 NovelAI 配置教程</h1><h3 id="配置推荐"><a class="markdownIt-Anchor" href="#配置推荐">#</a> 配置推荐</h3><p>4GB 以上显存的显卡（N 卡）<br>推荐：3060 12G 显存<br> CPU 无所谓 内存 16G 或以上</p><h2 id="这里推荐使用整合包已经包含所需下载的东西"><a class="markdownIt-Anchor" href="#这里推荐使用整合包已经包含所需下载的东西">#</a> 这里推荐使用整合包（已经包含所需下载的东西）</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMWxwRlA5VlVvVEdqWV85MFZNNVl2WWc=">https://pan.baidu.com/s/1lpFP9VUoTGjY_90VM5YvYg</span> 提取：4432<br> 等会上传不限速版<br><strong>（来自阿 B 的 up 主：独立研究员 - 星空，可以关注追下更新）</strong></p><h2 id="模型下载"><a class="markdownIt-Anchor" href="#模型下载">#</a> 模型下载</h2><p>**<strong> 模型下载地址</strong><br><strong> SD 官方模型</strong><br><strong> huggingface 需要先注册登录。</strong><br><span class="exturl" data-url="aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9Db21wVmlzL3N0YWJsZS1kaWZmdXNpb24tdi0xLTQtb3JpZ2luYWw=">https://huggingface.co/CompVis/stable-diffusion-v-1-4-original</span><br><strong> 二次元模型</strong></p><ul><li><strong>NovelAI</strong><br>magnet:?xt=urn:btih:5bde442da86265b670a3e5ea3163afad2c6f8ecc<br>webui</li><li><strong>Waifu Diffusion</strong><br> 以 Danbooru 的图片进行训练的二次元模型，目前被 NovelAI 薄纱，期待后续赶上。<br>v1.2: <span class="exturl" data-url="aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9oYWt1cmVpL3dhaWZ1LWRpZmZ1c2lvbg==">https://huggingface.co/hakurei/waifu-diffusion</span><br>v1.3: <span class="exturl" data-url="aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9oYWt1cmVpL3dhaWZ1LWRpZmZ1c2lvbi12MS0z">https://huggingface.co/hakurei/waifu-diffusion-v1-3</span></li><li><strong>TrinArt</strong><br> 动漫专精模型，和 wd、NovelAI 都不是一个训练来源，推荐装一个。<br><span class="exturl" data-url="aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9uYWNsYml0L3RyaW5hcnRfc3RhYmxlX2RpZmZ1c2lvbl92Mi90cmVlL21haW4=">https://huggingface.co/naclbit/trinart_stable_diffusion_v2/tree/main</span></li><li><strong>其他模型汇总（简单来说都被 NovelAI 薄纱，没有用的必要）：</strong><br><span class="exturl" data-url="aHR0cHM6Ly9yZW50cnkub3JnL3NkbW9kZWxz">https://rentry.org/sdmodels</span></li></ul><h3 id="这里有一个7g的模型听说比之前4g的好用"><a class="markdownIt-Anchor" href="#这里有一个7g的模型听说比之前4g的好用">#</a> 这里有一个 7G 的模型（听说比之前 4G 的好用）</h3><p>已经安装过了可以直接覆盖替换<br> last 包 <span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMUkxd0o2T2lINGdtS2hFRG5PR0pWMkE=">https://pan.baidu.com/s/1I1wJ6OiH4gmKhEDnOGJV2A</span> 提取：4432</p><h2 id="安装前的环境准备"><a class="markdownIt-Anchor" href="#安装前的环境准备">#</a> 安装前的环境准备</h2><p>需要 cuda、python3.10、git<br>cuda 下载地址：推荐 11.3 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9jdWRhLTExLTMtMS1kb3dubG9hZC1hcmNoaXZl">https://developer.nvidia.com/cuda-11-3-1-download-archive</span><br>cudnn 下载：<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9yZHAvY3Vkbm4tYXJjaGl2ZSVFRiVCQyU4OCVFOSU5QyU4MCVFOCVBNiU4MW5WaWRpYSVFNSVCQyU4MCVFNSU4RiU5MSVFOCU4MCU4NSVFOCVCNCVBNiVFNSU4RiVCNyVFRiVCQyU4OQ==">https://developer.nvidia.com/rdp/cudnn-archive（需要 nVidia 开发者账号）</span><br>python 下载地址：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kb3dubG9hZHMv">https://www.python.org/downloads/</span><br>git 下载地址：<span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9kb3dubG9hZC93aW4=">https://git-scm.com/download/win</span></p><h2 id="新建一文件夹拉取项目"><a class="markdownIt-Anchor" href="#新建一文件夹拉取项目">#</a> 新建一文件夹拉取项目</h2><p>右键 git bash here 进入命令行输入：<strong>git clone <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FVVE9NQVRJQzExMTEvc3RhYmxlLWRpZmZ1c2lvbi13ZWJ1aS5naXQ=">https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</span></strong> 拉取项目<br><img data-src="https://www.lolifuns.top/api/v3/file/source/3467/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221010084245.png?sign=T2o7MVs8UsnGJMq6AsGH94X4iIxSt9oVXMObzQj_yf8%3D%3A0" alt=""></p><h2 id="然后放入模型"><a class="markdownIt-Anchor" href="#然后放入模型">#</a> 然后放入模型</h2><ul><li>打开 models 文件夹再打开 Stable-diffusion 放入我们所需的模型（两个文件名需一致）<br><img data-src="https://www.lolifuns.top/api/v3/file/source/3468/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221010084715.png?sign=L2YP-QQMOd7fLh1QEfGzC-ZHitDqNkXjZYEbCCvZ6m8%3D%3A0" alt=""></li><li>退回 models 文件夹，创建一个名为 hypernetworks 的文件夹，进入里面把 pt 文件放进去<br><img data-src="https://www.lolifuns.top/api/v3/file/source/3469/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221010085105.png?sign=GpBlch8RmmzxwNJ5RYayDL9LoEdMU8Cx9RjW9niruYg%3D%3A0" alt=""></li></ul><h2 id="返回stable-diffusion-webui文件夹"><a class="markdownIt-Anchor" href="#返回stable-diffusion-webui文件夹">#</a> 返回 stable-diffusion-webui 文件夹</h2><p>点击 webui-user.bat 运行命令行就会自动安装依赖（此步建议全程开启代理）<br><img data-src="https://www.lolifuns.top/api/v3/file/source/3470/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221010085946.png?sign=2RnAar1MLIkXO166BSB9SUkaqhnEWmjAb6xA7UYOJYE%3D%3A0" alt=""><br>如果依然无法安装成功依赖可以使用上面的整合包</p><h2 id="完成后不要关闭命令行打开浏览器输入http1270017860"><a class="markdownIt-Anchor" href="#完成后不要关闭命令行打开浏览器输入http1270017860">#</a> 完成后不要关闭命令行，打开浏览器输入 http://127.0.0.1:7860</h2><p><img data-src="https://www.lolifuns.top/api/v3/file/source/3471/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221010090627.png?sign=qDkYhVLredamDuGUItuBvC3N0yQzMc_myrKtONXjVIw%3D%3A0" alt=""></p><ul><li>Sampling Steps 建议设置到 40-50 左右，CFG Scale 建议设置到 11.</li><li>负面 tag 规避词：<strong>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry</strong></li><li>负面 tag 可以加上<strong> extra limbs,3 legs</strong> 规避一些猎奇发生</li><li>正面 tag：可以加上<strong> masterpiece, best quality</strong> 增强效果</li><li>一些 tag 的参考表<span class="exturl" data-url="aHR0cHM6Ly93d3cubG9saWZ1bnMudG9wL3MvUU9JTA=="> https://www.lolifuns.top/s/QOIL</span> 密码：1234</li></ul><p>ai 生成的参考图<br><img data-src="https://www.lolifuns.top/api/v3/file/source/3473/00274-1029015264-anime,lgirl,female%20child,white,score__=10.png?sign=4Bjdal55YEOkl9vshNbYEp2LzawPsO3wOH99mHhIhZY%3D%3A0" alt=""><br><img data-src="https://www.lolifuns.top/api/v3/file/source/3474/00245-1174919438-cute%20girl,anime,loli,short%20hair,light%20blue%20hair,dress,blue%20eyes,round%20face,Smile,ice%20crystal%20wings,child,white%20short%20sleeve,glow.png?sign=TG3pSsiPmBS_dPTjQl8o7oGlv-T_BvUSGWTSlzRT4gg%3D%3A0" alt=""><br><img data-src="https://www.lolifuns.top/api/v3/file/source/3475/00223-4113072895-hatune%20miku,sailor%20dress,lgirl,masterpiece.png?sign=xJA8-RNmtS9v6z46JLSYJVczMWruzs7MQSrLS-NAzsQ%3D%3A0" alt=""></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>别当欧尼酱了动画化！</title>
+      <link href="/2022/05/29/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86%E5%8A%A8%E7%94%BB%E5%8C%96%EF%BC%81/"/>
+      <url>/2022/05/29/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86%E5%8A%A8%E7%94%BB%E5%8C%96%EF%BC%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="真是迟来的祝福呢"><a class="markdownIt-Anchor" href="#真是迟来的祝福呢">#</a> 真是迟来的祝福呢！</h1><p>因为各种原因本来是早点祝贺的，但却来到了今天 233，无论如何作为看了近 4 年别当欧尼酱了的读真感觉太棒了，恭喜呢<br><img data-src="https://www.lolifuns.top/api/v3/file/source/2799/o_1g3nc5k6a1c83acs1k4r21j156m2h.jpeg?sign=yA9ilVk4DAypCUx1oZv6VsKWdChl2cxY__X8bkr27l8%3D%3A0" alt=""></p><h2 id="别当欧尼酱动画化预告视频"><a class="markdownIt-Anchor" href="#别当欧尼酱动画化预告视频">#</a> 别当欧尼酱动画化预告视频</h2><div class="media-container"><div class="player" data-type="video" data-src='[{"name":"动画化视频","url":"https://www.lolifuns.top/api/v3/file/source/2393/videoplayback.mp4?sign=-Uo5KrCNH0lz9U1s_UUUFiyt7j6PFPq2UcHGCWN23hA%3D%3A0"}]'></div></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 漫画、番剧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>迁移hexo纪念</title>
+      <link href="/2022/05/24/%E8%BF%81%E7%A7%BBhexo%E7%BA%AA%E5%BF%B5/"/>
+      <url>/2022/05/24/%E8%BF%81%E7%A7%BBhexo%E7%BA%AA%E5%BF%B5/</url>
+      
+        <content type="html"><![CDATA[<p>啊哈哈，因为之前用 halo 搭建的博客是国内服务器加上我未成年，备案很麻烦所以现在就迁移到 hexo 了</p><p>之前有迁移 wordpress 的想法，但想想每个月还要多付 10 多元就没弄过了，而且 wordpress 弄太花里胡哨比较快，所以就使用 github pages 搭建了 hexo 了</p><p>主站：weiweiblog.top</p><p>纪念：<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220524184755.png" alt=""></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cloudreve webdav</title>
+      <link href="/2022/05/23/cloudreve-webdav/"/>
+      <url>/2022/05/23/cloudreve-webdav/</url>
+      
+        <content type="html"><![CDATA[<h2 id="cloudreve是国内大佬aaroon开发的一个开源网盘项目"><a class="markdownIt-Anchor" href="#cloudreve是国内大佬aaroon开发的一个开源网盘项目">#</a> <strong>cloudreve</strong> 是国内大佬 Aaroon 开发的一个开源网盘项目</h2><p><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220418203219.png" alt=""><br>官网：<span class="exturl" data-url="aHR0cHM6Ly9jbG91ZHJldmUub3JnLw==">cloudreve.org</span><br>github：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Nsb3VkcmV2ZS9jbG91ZHJldmU=">https://github.com/cloudreve/cloudreve</span></p><h3 id="首先我们打开网盘左测的webdav"><a class="markdownIt-Anchor" href="#首先我们打开网盘左测的webdav">#</a> 首先我们打开网盘左测的 WebDAV</h3><ul><li>创建一个新账号（记住<u>账号名</u>和<u>密码</u>待会用到）<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220418202749.png" alt=""></li></ul><h3 id="在windows下打开注册表"><a class="markdownIt-Anchor" href="#在windows下打开注册表">#</a> 在 windows 下打开注册表</h3><p><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419134948.png" alt=""></p><ol><li>路径<br> <code>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameter</code></li><li>把 BasicAuthLevel 值改成 2<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419135854.png" alt=""></li><li>删除目录下的 FileSizeLimitInBytes<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/asdzx.png" alt=""></li><li>在当前目录新建一个 FileSizeLimitInBytes<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419195057.png" alt=""></li><li>右键修改数值<br>十六进制 <code>ffffffffffffffff</code> <br> 十进制 <code>18446744073709551615</code> <br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419195536.png" alt=""></li></ol><h3 id="打开服务"><a class="markdownIt-Anchor" href="#打开服务">#</a> 打开服务</h3><p><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419201107.png" alt=""></p><ol><li>找到 WebClient<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419201339.png" alt=""></li><li>设为自动，然后停止再启动<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419201711.png" alt=""></li></ol><h3 id="打开此电脑在左上计算机中选择映射网络驱动器"><a class="markdownIt-Anchor" href="#打开此电脑在左上计算机中选择映射网络驱动器">#</a> 打开此电脑，在左上<em>计算机</em>中选择映射<em>网络驱动器</em></h3><p><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419201801.png" alt=""></p><ol><li>在文件夹中输入地址<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419202152.png" alt=""></li><li>之后弹出输入账号和密码，复制网站上的账号密码输入上去<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419202416.png" alt=""></li><li>至此成功添加到此电脑中，来看看效果<br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419202639.png" alt=""><br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220419202702.png" alt=""></li></ol><ul><li>感谢各位网上的大佬帮助以及 cloudreve 官方提供这么棒的开源网盘</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网盘 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cloudreve </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lfuns和nya网盘的使用与一些问题的方法</title>
+      <link href="/2022/05/19/Lfuns%E5%92%8Cnya%E7%BD%91%E7%9B%98%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2022/05/19/Lfuns%E5%92%8Cnya%E7%BD%91%E7%9B%98%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="lfuns和nya网盘的使用与一些问题的方法"><a class="markdownIt-Anchor" href="#lfuns和nya网盘的使用与一些问题的方法">#</a> Lfuns 和 nya 网盘的使用与一些问题的方法</h1><ul><li>首先说明 Lfuns 是我自建的网盘，和 nya 网盘基本没区别，使用上喜欢即可。</li></ul><ul><li>nya 网盘：<span class="exturl" data-url="aHR0cHM6L255YXBhbi5tb3V1cC50b3A=">nyapan.mouup.top</span><br>Lfuns：www.lolifuns.top</li></ul><h2 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法">#</a> 使用方法</h2><h3 id="视频外链"><a class="markdownIt-Anchor" href="#视频外链">#</a> 视频外链</h3><ol><li>首先要当然要上传<strong>视频</strong>或<strong>图片</strong>啦，轻按下方加号即可上传（新建目录可以新建文件夹）</li></ol><ul><li><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316225542.png" alt=""></li></ul><ol start="2"><li>上传完视频后<strong>右键</strong>文件，跳出获取外链</li></ol><ul><li><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316231628.png" alt=""></li></ul><ol start="3"><li>把<strong>外链</strong>复制</li></ol><ul><li><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316232109.png" alt=""></li></ul><ol start="4"><li>投稿喵站的话，直接在视频上传上放置链接即可</li></ol><ul><li><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316232601.png" alt=""></li></ul><h3 id="图片外链这里介绍我自己使用的方法如果有更好的方法有可以在评论里说"><a class="markdownIt-Anchor" href="#图片外链这里介绍我自己使用的方法如果有更好的方法有可以在评论里说">#</a> 图片外链（这里介绍我自己使用的方法，如果有更好的方法有可以在评论里说）</h3><ol><li>进入一个 markdown 的编辑器（这里用<em>菜鸟工具</em>演示，在线 markdown 编辑器）</li><li>复制图片外链</li></ol><ul><li><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220317130024.png" alt=""></li></ul><ol start="3"><li>在左边输入 <strong>! [] (图片外链)</strong></li></ol><ul><li><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316234026.png" alt=""></li></ul><ol start="3"><li>选中图片<strong> Ctrl+c</strong>，然后打开喵御宅，发帖界面<strong> Ctrl+v</strong> 即可</li></ol><ul><li><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316234625.png" alt=""><br><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316234555.png" alt=""></li></ul><h2 id="关于nya网盘遇到的一些问题和解决方法"><a class="markdownIt-Anchor" href="#关于nya网盘遇到的一些问题和解决方法">#</a> 关于 nya 网盘遇到的一些问题和解决方法</h2><h3 id="登入问题"><a class="markdownIt-Anchor" href="#登入问题">#</a> 登入问题</h3><ul><li>不小心登入退了出去，在一直刷新页面，如果有在浏览器保存账号密码，浏览器也会一直弹出登陆密码，可以尝试拼手速进去（</li><li>也可以尝试换一个浏览器登入，或者清除浏览器的缓存或者 cookie（清除 cookie 不是很建议）</li></ul><h3 id="文件上传了看不到文件"><a class="markdownIt-Anchor" href="#文件上传了看不到文件">#</a> 文件上传了，看不到文件</h3><ul><li><p>请在右上角的<strong>排列方式</strong>切换即可显示。</p></li><li><p>当然也有人说没有这个图标，可以尝试刷新网页，图标就会出现（当然也有可能很快就消失）</p></li><li><p><img data-src="https://cdn.jsdelivr.net/gh/shzbzjhsnsja/blog-img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220316235703.png" alt=""></p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
